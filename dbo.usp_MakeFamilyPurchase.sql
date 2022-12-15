@@ -7,6 +7,6 @@ begin
 	select @Result = count(*) from Family where FamilySurName = @FamilySurName
 	if @Result = 0
 		begin
-			print 'Family not founded'
+			throw 51000, 'Family not founded', 1
 		end
 end;
